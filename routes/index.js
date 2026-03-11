@@ -6,5 +6,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../views/index.html'));
 });
+router.get('/hora', (req, res) => {
+  const ahora = new Date();
+  res.send('Hora del servidor: ' + ahora.toLocaleString());
+});
 
 module.exports = router;
